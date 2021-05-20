@@ -69,7 +69,7 @@
                                     @endif
                                 </div>
                             </div>
-                            <hr class="" style="background: rgba(83, 82, 82, 0.565)">
+                            <hr class="">
                             <p class="text-center mt-3" style="font-weight:bold">OR</p>
 
                             <div class="d-flex  justify-content-center mt-4 ">
