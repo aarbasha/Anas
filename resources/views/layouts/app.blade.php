@@ -24,7 +24,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md  shadow-sm" style="background: rgb(0, 0, 0)">
+        <nav class="navbar navbar-expand-md  shadow-sm" style="background: rgb(60, 19, 132)">
             <div class="container">
                 <a class="navbar-brand text-danger font-weight-bold" href="{{ url('/') }}">
                     {{ config('app.name', 'LaraveL8') }}
