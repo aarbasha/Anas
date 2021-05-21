@@ -30,8 +30,8 @@
                     {{ config('app.name', 'LaraveL8') }}
                 </a>
                 <a class="navbar-brand text-danger font-weight-bold" href="{{ url('/') }}">
-                <img src="{{ asset('img/laravel.png') }}" alt="laravel" width="30px" height="30px" class="mr-2">
-                 </a>
+                    <img src="{{ asset('img/laravel.png') }}" alt="laravel" width="30px" height="30px" class="mr-2">
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
@@ -42,11 +42,31 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ml-5 mr-auto">
                         @auth
-                        <li class="ml-2 nav-item"><a href="{{ route('home') }}" class="nav-link text-white active">Home</a></li>
-                        <li class="ml-2 nav-item"><a href="" class="nav-link text-white ">My Apps</a></li>
-                        <li class="ml-2 nav-item"><a href="" class="nav-link text-white ">My Works</a></li>
-                        <li class="ml-2 nav-item"><a href="" class="nav-link text-white ">Prodects</a></li>
-                        <li class="ml-2 nav-item"><a href="" class="nav-link text-white ">Pages</a></li>
+                            <li class="ml-2 nav-item">
+                                <a href="{{ route('home') }}" class="nav-link active" style="color: rgb(216, 215, 215)">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="ml-2 nav-item">
+                                <a href="" class="nav-link" style="color: rgb(216, 215, 215)">
+                                    My Apps
+                                </a>
+                            </li>
+                            <li class="ml-2 nav-item">
+                                <a href="" class="nav-link" style="color: rgb(216, 215, 215)">
+                                    My Works
+                                </a>
+                            </li>
+                            <li class="ml-2 nav-item">
+                                <a href="" class="nav-link" style="color: rgb(216, 215, 215)">
+                                    Prodects
+                                </a>
+                            </li>
+                            <li class="ml-2 nav-item">
+                                <a href="" class="nav-link" style="color: rgb(216, 215, 215)">
+                                    Pages
+                                </a>
+                            </li>
                         @endauth
                     </ul>
 
@@ -62,7 +82,8 @@
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link text-white"
+                                        href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -82,7 +103,7 @@
                                     </a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
+                                                                 document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
