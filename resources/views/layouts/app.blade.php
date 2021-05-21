@@ -93,7 +93,7 @@
                                     style="border-radius:50%; width:39px; height:39px; float:left; margin-right:10px;">
 
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color: rgb(0, 255, 51)">
                                     {{ Auth::user()->name }}
                                 </a>
 
