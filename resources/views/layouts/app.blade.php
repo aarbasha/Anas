@@ -24,7 +24,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md  shadow-sm" style="background: rgb(60, 19, 132)">
+        <nav class="navbar navbar-expand-md  shadow-sm" style="background: rgb(236, 236, 236)">
             <div class="container">
                 <a class="navbar-brand text-danger font-weight-bold" href="{{ url('/') }}">
                     {{ config('app.name', 'LaraveL8') }}
@@ -43,27 +43,27 @@
                     <ul class="navbar-nav ml-5 mr-auto">
                         @auth
                             <li class="ml-2 nav-item">
-                                <a href="{{ route('home') }}" class="nav-link active" style="color: rgb(216, 215, 215)">
+                                <a href="{{ route('home') }}" class="nav-link active" style="color: rgb(0, 0, 0)">
                                     Home
                                 </a>
                             </li>
                             <li class="ml-2 nav-item">
-                                <a href="" class="nav-link" style="color: rgb(216, 215, 215)">
+                                <a href="" class="nav-link" style="color: rgb(0, 0, 0)">
                                     My Apps
                                 </a>
                             </li>
                             <li class="ml-2 nav-item">
-                                <a href="" class="nav-link" style="color: rgb(216, 215, 215)">
+                                <a href="" class="nav-link" style="color: rgb(0, 0, 0)">
                                     My Works
                                 </a>
                             </li>
                             <li class="ml-2 nav-item">
-                                <a href="" class="nav-link" style="color: rgb(216, 215, 215)">
+                                <a href="" class="nav-link" style="color: rgb(0, 0, 0)">
                                     Prodects
                                 </a>
                             </li>
                             <li class="ml-2 nav-item">
-                                <a href="" class="nav-link" style="color: rgb(216, 215, 215)">
+                                <a href="" class="nav-link" style="color: rgb(0, 0, 0)">
                                     Pages
                                 </a>
                             </li>
@@ -93,7 +93,7 @@
                                     style="border-radius:50%; width:39px; height:39px; float:left; margin-right:10px;">
 
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color: rgb(0, 255, 51)">
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
