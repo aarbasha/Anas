@@ -2,36 +2,44 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\loginController;
+use App\Http\Controllers\CrudController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route page Home
+Route::view('/', 'welcome');
 
+//Route show profile
 Route::get('profile' ,[App\Http\Controllers\profileController::class,'edit'])->name('profile');
 
+Route::resource('crud', CrudController::class);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Route Auth
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//GOOGLE LOGIN
+//Route GOOGLE LOGIN
 Route::get("login/google" , [loginController::class,"redirectToGoogle"])->name("login.google");
 Route::get("login/google/callback" , [loginController::class,"getDataGoogleCallback"]);
 
-//FACEBOOK LOGIN
+//Route FACEBOOK LOGIN
 Route::get("login/facebook" , [loginController::class,"redirectToFacebook"])->name("login.facebook");
 Route::get("login/facebook/callback" , [loginController::class,"getDataFacebookCallback"]);
 
-//GITHUB LOGIN
+//Route GITHUB LOGIN
 Route::get("login/github" , [loginController::class,"redirectToGithub"])->name("login.github");
 Route::get("login/github/callback" , [loginController::class,"getDataGithubCallback"]);

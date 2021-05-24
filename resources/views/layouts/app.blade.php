@@ -4,14 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{-- <link rel="shortcut icon" src="{{ asset('img/laravel.png') }}" type="image/x-icon"> --}}
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>{{ config('app.name', 'LaraveL8') }}</title>
+
+    <title>@yield('title')</title>
 
     <!-- Scripts -->
+
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -58,8 +60,8 @@
                                 </a>
                             </li>
                             <li class="ml-2 nav-item">
-                                <a href="" class="nav-link" style="color: rgb(0, 0, 0)">
-                                    Prodects
+                                <a href="{{ route('crud.index') }} " class="nav-link" style="color: rgb(0, 0, 0)">
+                                    CRUD
                                 </a>
                             </li>
                             <li class="ml-2 nav-item">
@@ -102,8 +104,9 @@
                                         {{ __('profile') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                                                 document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
