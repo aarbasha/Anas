@@ -200,7 +200,7 @@
             </div>
         </div>
         <div class="row d-flex mt-5 justify-content-center">
-            <div class="col-lg-12">
+            <div class="col-lg-12 offset-md-3">
                 <table class="table w-100">
                     <thead>
                         <tr class="bg-dark text-primary">
