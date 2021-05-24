@@ -6,7 +6,7 @@ use App\Http\Controllers\CrudController;
 
 
 //Route page Home
-Route::view('/', 'welcome');
+Route::view('/', 'auth.login');
 
 //Route show profile
 Route::get('profile' ,[App\Http\Controllers\profileController::class,'edit'])->name('profile');
