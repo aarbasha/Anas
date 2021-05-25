@@ -7,9 +7,10 @@ use App\Http\Controllers\CrudController;
 
 //Route page Home
 Route::group(['middleware'=>'auth'], function(){
-    
+
     Route::view('/', 'auth.login');
     Route::view('table', 'table')->name('table');
+    Route::view('empty', 'empty')->name('empty');
 
     //Route show profile
     Route::get('profile' ,[App\Http\Controllers\profileController::class,'edit'])->name('profile');

@@ -14,7 +14,7 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="dashboard" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="index.html">Dashboard 01</a> </li>
+                            <li> <a href="{{ route('empty')}}">Dashboard 01</a> </li>
                             <li> <a href="index-02.html">Dashboard 02</a> </li>
                             <li> <a href="index-03.html">Dashboard 03</a> </li>
                             <li> <a href="index-04.html">Dashboard 04</a> </li>

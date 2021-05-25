@@ -2,7 +2,7 @@
     style="background: #282A39;color:wheat">
     <!-- logo -->
     <div class="text-left navbar-brand-wrapper">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/logo-dark.png" alt=""></a>
+        <a class="navbar-brand brand-logo" href="home"><img src="assets/images/logo-dark.png" alt=""></a>
         <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-icon-dark.png"
                 alt=""></a>
     </div>
@@ -25,15 +25,25 @@
     <!-- top bar right -->
     <ul class="nav navbar-nav ml-auto">
         <li class="dropdown show nav-item pt-2">
-            <a class="btn btn-outline-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+            <a class="btn btn-outline-danger btn-md dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ trans('chois Languesh') }}
+                {{ trans('Tha language') }}
             </a>
 
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="background: #ffffff;"">
                 {{-- @foreach ($collection as $item) --}}
-                <a class="dropdown-item" href="#">Aribic</a>
-                <a class="dropdown-item" href="#">English</a>
+                <a class="dropdown-item" href="#" style="color: rgb(0, 0, 0)" >Aribic
+                    <span class="float-right">
+                        <i class="flag-icon flag-icon-sy"></i>
+                    </span>
+
+                </a>
+                <a class="dropdown-item" href="#" style="color: rgb(0, 0, 0)">English
+                    <span class="float-right">
+                        <i class="flag-icon flag-icon-us"></i>
+                    </span>
+
+                </a>
                 {{-- @endforeach --}}
             </div>
         </li>

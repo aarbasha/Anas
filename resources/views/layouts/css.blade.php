@@ -8,6 +8,7 @@
 <title>@yield("title")</title>
 
 <!-- Favicon -->
+<link rel="stylesheet" href="assets\css\flag-icon-css\css\flag-icon.min.css">
 <link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon" />
 
 <!-- Font -->
