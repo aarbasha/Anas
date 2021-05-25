@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center" style="margin-top: 100px">
+    <div class="row justify-content-center" style="">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
@@ -60,11 +60,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-3">
-                                <button type="submit" class="btn btn-primary">
+                        <div class="form-group row mb-0 ">
+                            <div class="col-md-6 offset-md-3 mt-3 ">
+                                <button type="submit" class="btn btn-block btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                                <a href="{{route('login')}}" class="btn btn-block btn-success">
+                                    {{ __('Login') }}
+                                </a>
                             </div>
                         </div>
                         <hr class="">

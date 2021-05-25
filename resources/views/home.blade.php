@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 @section('title', 'page home')
 
 @section('content')
@@ -661,4 +661,4 @@
         @include('layouts.footer')
         <!-- partial -->
     </div>
-@endsection
+@endsection --}}

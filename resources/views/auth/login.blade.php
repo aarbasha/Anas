@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center" style="margin-top: 100px">
+        <div class="row justify-content-center" style="">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Login') }}</div>
@@ -55,16 +55,20 @@
                             </div>
 
                             <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-3">
-                                    <button type="submit" class="btn btn-lg btn-primary">
+                                <div class="col-md-6 offset-md-3 d-flex justify-content-around">
+                                    <button type="submit" class="btn btn-lg btn-success">
                                         {{ __('Login') }}
                                     </button>
-
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
-                                    @endif
+                                    <a href="{{ route('register')}}" class="btn btn-lg btn-primary">
+                                        {{ __('register') }}
+                                    </a>
+                                </div>
+                                <div class="col-md-6 offset-md-3 d-flex mt-2 justify-content-center">
+                                @if (Route::has('password.request'))
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    {{ __('Forgot Your Password?') }}
+                                </a>
+                                @endif
                                 </div>
                             </div>
                             <hr class="">

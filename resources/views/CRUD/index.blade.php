@@ -1,34 +1,10 @@
-@extends('layouts.app')
-@section('title', 'Laravel 8 CRUD')
-
+{{-- @extends('layouts.app')
+@section('title', 'صفحة الجداول')
 @section('content')
-    <div class="container">
-
-        @if (Session::get('success'))
-            <div class="alert alert-success alert-dismissible fade show">
-                {{ Session::get('success') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
-        @if (Session::get('faild'))
-            <div class="alert alert-warning alert-dismissible fade show">
-                {{ Session::get('faild') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
-
-        <div class="row justify-content-center">
-            <div class="col-lg-4">
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
-                    Add To DataBases +
-                </button>
-
-                {{-- --------------------------- Model Add ---------------------- --}}
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header"> --}}
+                {{-- ----------------------model add-------------- --}}
                 <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModal"
                     aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -39,6 +15,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
+
                             <div class="modal-body">
                                 <form action="{{ route('crud.store') }}" method="POST">
                                     @csrf
@@ -172,7 +149,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{ route('crud.destroy','test')}}" method="POST">
+                                <form action="{{ route('crud.destroy', 'test') }}" method="POST">
                                     {{ method_field('delete') }}
                                     {{ csrf_field() }}
 
@@ -193,69 +170,103 @@
                     </div>
                 </div>
                 {{-- ------------------------ End All Modele ---------------- --}}
-
+                <h3 class="page-title"> Basic Tables </h3>
+                {{-- @if (Session::get('success'))
+                <div class="alert alert-success alert-dismissible w-50 position-absolute fade show"
+                    style="right: 300px;background:rgb(0, 150, 18);color:white;">
+                    {{ Session::get('success') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endif
+                @if (Session::get('faild'))
+                    <div class="alert alert-warning alert-dismissible w-50 position-absolute fade show"
+                        style="right: 300px;background:rgb(148, 4, 4);color:white;">
+                        {{ Session::get('faild') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif --}}
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+                    </ol>
+                    <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#addModal">
+                        Add To DataBases +
+                    </button>
+                </nav>
             </div>
-            <div class="col-lg-8">
-                <h1 class="text-danger text-center">Laern to Laravel 8 CRUD</h1>
+            <div class="row">
+
+                <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">جدول الموظفين</h4>
+                            {{-- <p class="card-description"> Add class <code>.table-hover</code> --}}
+                            </p>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>username</th>
+                                            <th>phone</th>
+                                            <th>Email</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{-- @foreach ($emps as $emp)
+                                            <tr>
+                                                <td>{{ $emp->id }}</td>
+                                                <td>{{ $emp->name }}</td>
+                                                <th>{{ $emp->username }}</th>
+                                                <th>{{ $emp->phone }}</th>
+                                                <th>{{ $emp->email }}</th>
+                                                <td class="text-center">
+                                                    <a type="button" class="btn  btn-outline-primary mr-1"
+                                                        data-toggle="modal" data-target="#EditModal"> edit </a>
+                                                    <a type="button" class="btn btn-outline-danger mr-1" data-toggle="modal"
+                                                        data-target="#deleteModal"> Delete </a>
+                                                    <a type="button" class="btn btn-outline-success mr-1"
+                                                        data-toggle="modal" data-target="#"> show </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach --}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <div class="row d-flex mt-5 justify-content-center">
-            <div class="col-lg-12 offset-md-3">
-                <table class="table w-100">
-                    <thead>
-                        <tr class="bg-dark text-primary">
-                            {{-- text-white --}}
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">username</th>
-                            <th scope="col">phone</th>
-                            <th scope="col">email</th>
-                            <th scope="col" class="text-center">CRUD</th>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($emps as $emp)
-                            <tr>
-                                <th scope="row">{{ $emp->id }}</th>
-                                <td>{{ $emp->name }}</td>
-                                <td>{{ $emp->username }}</td>
-                                <td>{{ $emp->phone }}</td>
-                                <td>{{ $emp->email }}</td>
-                                <td class="text-center">
-                                    <a type="button" class="btn  btn-outline-primary mr-1" data-toggle="modal"
-                                        data-target="#EditModal"> edit </a>
-                                    <a type="button" class="btn btn-outline-danger mr-1" data-toggle="modal"
-                                        data-target="#deleteModal"> Delete </a>
-                                    <a type="button" class="btn btn-outline-success mr-1" data-toggle="modal"
-                                    data-target="#"> show </a>
-                                </td>
-                            </tr>
-
-                        @endforeach
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <script>
+        <!-- partial -->
+    {{-- </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="javascript">
         $(Document).ready(function() {
             $('.alert').fadeOut(5000);
         });
+        console.log('open this Module')
 
-    </script>
-    <script>
         $('#exampleModal').on('show.bs.modal', function(event) {
-            var button = $(event.relatedTarget) // Button that triggered the modal
-            var recipient = button.data('whatever') // Extract info from data-* attributes
-            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-            var modal = $(this)
-            modal.find('.modal-title').text('New message to ' + recipient)
-            modal.find('.modal-body input').val(recipient)
+            console.log('open this Module')
+            // var button = $(event.relatedTarget) // Button that triggered the modal
+            // var recipient = button.data('whatever') // Extract info from data-* attributes
+            // // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            // var modal = $(this)
+            // modal.find('.modal-title').text('New message to ' + recipient)
+            // modal.find('.modal-body input').val(recipient)
         })
-
     </script>
-@endsection
+@endsection --}}

@@ -1,21 +1,31 @@
- <!-- plugins:js -->
- <script src="assets/vendors/js/vendor.bundle.base.js"></script>
- <!-- endinject -->
- <!-- Plugin js for this page -->
- <script src="assets/vendors/chart.js/Chart.min.js"></script>
- <script src="assets/vendors/progressbar.js/progressbar.min.js"></script>
- <script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
- <script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
- <script src="assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
- <!-- End plugin js for this page -->
- <!-- inject:js -->
- <script src="assets/js/off-canvas.js"></script>
- <script src="assets/js/hoverable-collapse.js"></script>
- <script src="assets/js/misc.js"></script>
- <script src="assets/js/settings.js"></script>
- <script src="assets/js/todolist.js"></script>
- <!-- endinject -->
- <!-- Custom js for this page -->
- <script src="assets/js/dashboard.js"></script>
- <!-- End custom js for this page -->
- {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+ <!-- jquery -->
+ <script src="{{ URL::asset('assets/js/jquery-3.3.1.min.js') }}"></script>
+ <!-- plugins-jquery -->
+ <script src="{{ URL::asset('assets/js/plugins-jquery.js') }}"></script>
+ <!-- plugin_path -->
+ <script>
+     var plugin_path = 'js/';
+
+ </script>
+
+ <!-- chart -->
+ <script src="{{ URL::asset('assets/js/chart-init.js') }}"></script>
+ <!-- calendar -->
+ <script src="{{ URL::asset('assets/js/calendar.init.js') }}"></script>
+ <!-- charts sparkline -->
+ <script src="{{ URL::asset('assets/js/sparkline.init.js') }}"></script>
+ <!-- charts morris -->
+ <script src="{{ URL::asset('assets/js/morris.init.js') }}"></script>
+ <!-- datepicker -->
+ <script src="{{ URL::asset('assets/js/datepicker.js') }}"></script>
+ <!-- sweetalert2 -->
+ <script src="{{ URL::asset('assets/js/sweetalert2.js') }}"></script>
+ <!-- toastr -->
+ @yield('js')
+ <script src="{{ URL::asset('assets/js/toastr.js') }}"></script>
+ <!-- validation -->
+ <script src="{{ URL::asset('assets/js/validation.js') }}"></script>
+ <!-- lobilist -->
+ <script src="{{ URL::asset('assets/js/lobilist.js') }}"></script>
+ <!-- custom -->
+ <script src="{{ URL::asset('assets/js/custom.js') }}"></script>
